@@ -70,7 +70,16 @@ system("pause");
 return 0;
 }</pre></code>
 <p>Aí fica da criatividade de executar qualquer comando DOS de quem cria.</p><br><p>Uma coisa bacana é varrer pasta onde normalmente não se tem permissão no Windows 7 jogando em outra, e pegar emails por exemplo.</p></h5></h5></h5>
-<code><pre>#include <stdio.h> #include <stdlib.h> int main(int argc, char *argv[]) {  FILE *fp;  fp = fopen("file99.bat","w+");  //habilito gravacao em arquivo, no caso bat ja que estamos em cima de Windows  fprintf(fp, "%s" "%s", "cd / \n",findstr @gmail.com *.txt >C:/Users/rodolfo/Documents/peguei.txt"); //  filtro por find e jogo onde tem permissão  fclose(fp);  system("start /Max file99.bat");  return 0; }</pre></code>
+<code><pre>#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+int main(int argc, char *argv[]) {
+FILE *fp;
+fp = fopen("file99.bat","w+");  //habilito gravacao em arquivo, no caso bat ja que estamos em cima de Windows
+fprintf(fp, "%s" "%s", "cd / \n","findstr @gmail.com *.txt &gt;C:/Users/rodolfo/Documents/peguei.txt"); //  filtro por find e jogo onde tem permissão
+fclose(fp);
+system("start /Max file99.bat");
+return 0;
+}</pre></code>
 <p>Caso queira deixar o home compartilhado no gluster…<br>
 formate e monte.
 </p>
