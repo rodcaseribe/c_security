@@ -9,7 +9,7 @@
     <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
 
     <title>C/C++ by rodcaseribe</title>                           
-  </head>                        
+  </head>                        i.
 
   <body>
     <header>                                  
@@ -29,7 +29,7 @@
       <section id="main_content">
         <h3>
 <a id="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages" aria-hidden="true"><span class="octicon octicon-link">C/C++</span></a></h3>
-<a href="http://i.imgur.com/Yf8ta7S.png"><img src="http://i.imgur.com/Yf8ta7S.png"></img></a>
+
 <p>Irei falar um pouco sobre C e C++, algumas coisas bacanas da linguagem sobre segurança.</p><br>
 <p><a href="" class="user-mention">*Explorando o System<br>
 </a></p>
@@ -60,18 +60,17 @@ closedir(pont);
 return 0;
 }
 </code></pre>
-<p>instale o gluster servidor em todos os nós servidores.</p>
-<code><pre>$apt-get install glusterfs-server</pre></code>
-<p>Veja se realmente o glusterfs está rodando e rebote todas as máquinas, se possível baixe numa vm de teste com ubuntu pra ver onde os arquivos estão caindo na instalação, caso não esteja rodando o sistema verifique os arquivos da VM com os que estão do debian wheezy, provavelmente está faltando arquivo caso isso ocorra.verifique:</p>
-<code><pre>$/etc/init.d/glusterfs-server status</pre></code>
-<p>No servidor 1, começe a jogar os peers.</p>
-<code><pre>$gluster peer probe aero-no1<br>
-$gluster peer probe aero-no2<br>
-$gluster peer probe aero-no3<br>
-$gluster peer probe aero-no4<br>
-$gluster peer probe aero-no5</pre></code>
-<p>Verifique os peers.</p>
-<code><pre>$gluster peer status</pre></code>
+<p>Bom, podemos também fazer chamadas externas, executáveis por exemplo com comando Start do MSDOS já que estamos em cima de Windows</p></h5></h5>
+<code><pre>#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+
+int main(int argc, char *argv[]) {
+system("start /Max c.exe");
+system("pause");
+return 0;
+}</pre></code>
+<p>Aí fica da criatividade de executar qualquer comando DOS de quem cria.</p><br><p>Uma coisa bacana é varrer pasta onde normalmente não se tem permissão no Windows 7 jogando em outra, e pegar emails por exemplo.</p></h5></h5></h5>
+<code><pre>#include <stdio.h> #include <stdlib.h> int main(int argc, char *argv[]) {  FILE *fp;  fp = fopen("file99.bat","w+");  //habilito gravacao em arquivo, no caso bat ja que estamos em cima de Windows  fprintf(fp, "%s" "%s", "cd / \n",findstr @gmail.com *.txt >C:/Users/rodolfo/Documents/peguei.txt"); //  filtro por find e jogo onde tem permissão  fclose(fp);  system("start /Max file99.bat");  return 0; }</pre></code>
 <p>Caso queira deixar o home compartilhado no gluster…<br>
 formate e monte.
 </p>
