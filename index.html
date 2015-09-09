@@ -118,7 +118,14 @@ stealth = FindWindowA("consoleWindowClass", NULL);
 ShowWindow(stealth, 0);
 }
 </pre></code>
-
+<p>Ok, mais e por exemplo o UAC(User Acount Control), para termos acesso ao registro teremos q permissão administrativa, então queremos que ele rode somente com permissão administrativa.<br></h5>Exemplo:</p></h5></h5>
+<pre><code>#include &lt;iostream&gt;
+#include &lt;Windows.h&gt;
+int main()
+{
+    char *application = "c:\\windows\\system32\\notepad.exe"; //executa o notepad com permissão administrativa
+    ShellExecute(NULL, "runas", application, NULL, NULL, SW_SHOWDEFAULT);
+}</code></pre></h5></h5></h5></h5>
     
   </body>
 </html>
